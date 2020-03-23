@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="{{path('books')}}"><img src="https://nospensees.fr/wp-content/uploads/2016/03/livre-ouvert-.jpg" alt=""></a></li>
+                    <li> Lien 1</li>
+                    <li> Lien 2</li>
+                </ul>
+            </nav>
+        </header>
+
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+
+        <footer>
+            <nav>
+                <ul>
+                    <li> Lien 1</li>
+                    <li> Lien 2</li>
+                    <li> Lien 3</li>
+                </ul>
+            </nav>
+        </footer>
+
+    </body>
+</html>
