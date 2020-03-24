@@ -90,7 +90,28 @@ class BookController extends AbstractController
         $entityManager->remove($book);
         $entityManager->flush();
 
-        return new Response('le livre a bien été supprimé');
+        return $this->redirectToRoute('books');
+    }
+
+    /**
+     * @Route("/books/update/{id}", name="update_book")
+     * @param BookRepository $bookRepository
+     * @param EntityManagerInterface $entityManager
+     * @param $id
+     * @return Response
+     */
+    public function updateBook(BookRepository $bookRepository, EntityManagerInterface $entityManager, $id) {
+
+        $book = $bookRepository->find($id);
+
+        $book->setTitle('blubaliblu');
+
+        $entityManager->persist($book);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('books');
+
+
     }
 
 }

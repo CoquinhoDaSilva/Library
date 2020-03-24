@@ -14,6 +14,7 @@
         <p>{{ book.author }}</p>
         <p>Nombre de pages : {{ book.nbPages }}</p>
         <p><a href="{{ path('delete_book', {'id':book.id})  }}">Supprimer le livre</a></p>
+        <p><a href="{{ path('update_book', {'id':book.id})  }}">Modifier le livre</a></p>
     </div>
 {% endfor %}
 
