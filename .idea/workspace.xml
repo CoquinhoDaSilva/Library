@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8e782f2-720a-4d7b-85ea-54fbe92f4258" name="Default Changelist" comment="" />
+    <list default="true" id="b8e782f2-720a-4d7b-85ea-54fbe92f4258" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -19,6 +22,9 @@
         <option value="CSS File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -133,6 +139,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1ZWeQ2RL32AAFBPTlF3qsiMqb4c" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -143,6 +150,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -154,7 +162,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584959257959</updated>
-      <workItem from="1584959259500" duration="12757000" />
+      <workItem from="1584959259500" duration="14426000" />
+      <workItem from="1585038872217" duration="1703000" />
     </task>
     <servers />
   </component>
@@ -162,6 +171,26 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="233" y="4" key="#Notifications" timestamp="1584980033535">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="233" y="4" key="#Notifications/0.0.1280.689/-1920.0.1920.1050@0.0.1280.689" timestamp="1584980033535" />
+    <state x="387" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584979733260">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="387" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.689/-1920.0.1920.1050@0.0.1280.689" timestamp="1584979733260" />
+    <state x="263" y="0" key="CommitChangelistDialog2" timestamp="1585043386503">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="263" y="0" key="CommitChangelistDialog2/0.0.1280.689/-1920.0.1920.1050@0.0.1280.689" timestamp="1585043386503" />
+    <state x="421" y="100" key="FileChooserDialogImpl" timestamp="1584980054302">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="421" y="100" key="FileChooserDialogImpl/0.0.1280.689/-1920.0.1920.1050@0.0.1280.689" timestamp="1584980054302" />
+    <state x="221" y="80" key="IDE.errors.dialog" timestamp="1584980037092">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="221" y="80" key="IDE.errors.dialog/0.0.1280.689/-1920.0.1920.1050@0.0.1280.689" timestamp="1584980037092" />
     <state x="743" y="144" key="NewPhpClassDialog" timestamp="1584969802923">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -170,5 +199,13 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="477" y="265" key="NewPhpFileDialog/0.0.1280.689/-1920.0.1920.1050@0.0.1280.689" timestamp="1584960684754" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1584980057148">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.689/-1920.0.1920.1050@0.0.1280.689" timestamp="1584980057148" />
+    <state x="314" y="169" key="com.intellij.ide.util.TipDialog" timestamp="1585038888897">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="314" y="169" key="com.intellij.ide.util.TipDialog/0.0.1280.689/-1920.0.1920.1050@0.0.1280.689" timestamp="1585038888897" />
   </component>
 </project>
