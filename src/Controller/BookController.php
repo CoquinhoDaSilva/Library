@@ -98,13 +98,14 @@ class BookController extends AbstractController
      * @param BookRepository $bookRepository
      * @param EntityManagerInterface $entityManager
      * @param $id
+     * @param Request $request
      * @return Response
      */
     public function updateBook(BookRepository $bookRepository, EntityManagerInterface $entityManager, $id) {
 
         $book = $bookRepository->find($id);
 
-        $book->setTitle('blubaliblu');
+        $book->setTitle('blubaloula');
 
         $entityManager->persist($book);
         $entityManager->flush();
@@ -114,4 +115,20 @@ class BookController extends AbstractController
 
     }
 
+    /**
+     * @Route("/books/search", name="search_book")
+     * @param BookRepository $bookRepository
+     * @param Request $request
+     */
+    public function searchBook(BookRepository $bookRepository, Request $request) {
+
+        $search = $request->query->get('search');
+
+        $books = $bookRepository->getByWordInResume($search);
+
+        return $this->render('search.html.twig', [
+            'books'=> $books,
+            'search'=> $search
+        ]);
+    }
 }

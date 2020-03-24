@@ -7,6 +7,7 @@
 {% block body %}
 
 <h1>Les livres</h1>
+
 {% for book in books %}
     <div>
         <a href="{{ path('book', {'id':book.id}) }}"><h2>{{ book.title }}</h2></a>

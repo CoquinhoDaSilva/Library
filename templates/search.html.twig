@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Les livres
+{% endblock %}
+
+{% block body %}
+
+    <h1>Les livres recherchés</h1>
+
+    {% for book in books %}
+
+        <p>Vous avez recherché les livres contenant le(s) mot(s) {{ search }}</p>
+        <div>
+            <a href="{{ path('book', {'id':book.id}) }}"><h2>{{ book.title }}</h2></a>
+            <p>{{ book.resume }}</p>
+            <p>{{ book.author }}</p>
+            <p>Nombre de pages : {{ book.nbPages }}</p>
+            <p><a href="{{ path('delete_book', {'id':book.id})  }}">Supprimer le livre</a></p>
+            <p><a href="{{ path('update_book', {'id':book.id})  }}">Modifier le livre</a></p>
+        </div>
+    {% endfor %}
+
+
+{% endblock %}
