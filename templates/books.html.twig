@@ -13,6 +13,7 @@
         <p>{{ book.resume }}</p>
         <p>{{ book.author }}</p>
         <p>Nombre de pages : {{ book.nbPages }}</p>
+        <p><a href="{{ path('delete_book', {'id':book.id})  }}">Supprimer le livre</a></p>
     </div>
 {% endfor %}
 
