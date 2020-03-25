@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    L'auteur
+{% endblock %}
+
+{% block body %}
+
+    <h1>L'auteur</h1>
+
+    <section class="authorsection">
+        <div class="authordiv xLarge-8">
+            <h2>{{ author.firstname}} {{ author.name }}</h2>
+            <p class="resume">{{ author.biography }}</p>
+            <p class="author"> {{ author.dateofbirth|date('m/d/Y') }}</p>
+        </div>
+    </section>
+
+    <div class="back"><a href="{{ path('authors') }}" class="xLarge-12">Revenir en arrière.</a></div>
+
+
+
+
+{% endblock %}

@@ -8,18 +8,25 @@
 
     <h1>Les livres recherchés</h1>
 
-    {% for book in books %}
+    <p class="searchvariable">Vous avez recherché les livres contenant le(s) mot(s) {{ search }}</p>
 
-        <p>Vous avez recherché les livres contenant le(s) mot(s) {{ search }}</p>
-        <div>
+<section class="searchsection">
+    {% for book in books %}
+        <div class="xLarge-8 searchdiv">
             <a href="{{ path('book', {'id':book.id}) }}"><h2>{{ book.title }}</h2></a>
-            <p>{{ book.resume }}</p>
-            <p>{{ book.author }}</p>
-            <p>Nombre de pages : {{ book.nbPages }}</p>
-            <p><a href="{{ path('delete_book', {'id':book.id})  }}">Supprimer le livre</a></p>
-            <p><a href="{{ path('update_book', {'id':book.id})  }}">Modifier le livre</a></p>
+            <p class="resume">{{ book.resume }}</p>
+            <p class="author">{{ book.author }}</p>
+            <p class="nbPages">Nombre de pages : {{ book.nbPages }}</p>
+            <div>
+                <a class="update" href="{{ path('update_book', {'id':book.id})  }}">Modifier le livre</a>
+                <a class="delete" href="{{ path('delete_book', {'id':book.id})  }}">Supprimer le livre</a>
+            </div>
         </div>
     {% endfor %}
+</section>
+
+    <div class="back"><a href="{{ path('books') }}" class="xLarge-12">Revenir en arrière.</a></div>
+
 
 
 {% endblock %}

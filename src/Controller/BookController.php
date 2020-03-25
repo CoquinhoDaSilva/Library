@@ -16,7 +16,7 @@ class BookController extends AbstractController
 {
 
     /**
-     * @Route("/", name="books")
+     * @Route("/books", name="books")
      * @param BookRepository $bookRepository
      * @return Response
      */
