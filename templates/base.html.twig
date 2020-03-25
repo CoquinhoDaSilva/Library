@@ -2,31 +2,35 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
         <meta charset="UTF-8">
         <title>{% block title %}{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
 
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="{{path('books')}}"><img src="https://us.123rf.com/450wm/sudok1/sudok11503/sudok1150300004/37345053-vieux-livre-ouvert-pour-%C3%A9tudier-isol%C3%A9-sur-un-fond-noir.jpg?ver=6" alt=""></a></li>
-                    <li> Lien 1</li>
-                    <li> Lien 2</li>
-                </ul>
+        <header class="xLarge-12">
+            <nav class="xLarge-12">
+                    <ul class="listheader xLarge-12">
+                        <li class="xLarge-2"><a href="{{ path('books') }}"><img  class="imglogo" src="https://us.123rf.com/450wm/sudok1/sudok11503/sudok1150300004/37345053-vieux-livre-ouvert-pour-%C3%A9tudier-isol%C3%A9-sur-un-fond-noir.jpg?ver=6" alt=""></a></li>
+                        <li class="xLarge-2">Galerie</li>
+                        <li class="xLarge-2">Blog</li>
+                        <li class="xLarge-2">Contact</li>
+                        <li class="xLarge-2">A propos</li>
+                     </ul>
             </nav>
         </header>
 
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
 
-        <footer>
-            <nav>
-                <ul>
-                    <li> Lien 1</li>
-                    <li> Lien 2</li>
-                    <li> Lien 3</li>
+        <footer class="xLarge-12">
+            <nav class="xLarge-12">
+                <ul class="listfooter xLarge-12">
+                    <li class="xLarge-3">Où sommes-nous ?</li>
+                    <li class="xLarge-3">Bibliothèque</li>
+                    <li class="xLarge-3">Contact</li>
+                    <li class="xLarge-3">A propos</li>
                 </ul>
             </nav>
         </footer>

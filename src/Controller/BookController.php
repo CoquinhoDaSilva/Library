@@ -16,7 +16,7 @@ class BookController extends AbstractController
 {
 
     /**
-     * @Route("/books/", name="books")
+     * @Route("/", name="books")
      * @param BookRepository $bookRepository
      * @return Response
      */
@@ -105,7 +105,7 @@ class BookController extends AbstractController
 
         $book = $bookRepository->find($id);
 
-        $book->setTitle('blubaloula');
+        $book->setTitle('blubalu');
 
         $entityManager->persist($book);
         $entityManager->flush();

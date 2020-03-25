@@ -5,69 +5,124 @@ body {
 
 header {
     background-color: black;
-    height: 150px;
-    color: white;
-    text-align: center;
+    border-bottom: solid 3px gold;
+    position: fixed;
+    height: 15%;
 }
 
 footer {
     background-color: black;
-    height: 150px;
+    border-top: solid 3px gold;
+    padding : 1% 0;
+}
+
+main {
+    padding-bottom: 5%;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: darkblue;
+}
+
+.imglogo {
+    width: 60%;
+    height: auto;
+}
+
+.listheader {
     color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     text-align: center;
+    font-size: 20px;
+}
+
+.listheader li {
+    display: inline-block;
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 5%;
-}
-
-header ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    text-align: center;
+    padding-top: 15%;
+    padding-bottom: 5%;
     margin: 0;
-    justify-content: space-between;
 }
 
-header li {
+.sectionbookslist {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-img {
-    width: auto;
-    height: 150px;
-}
-
-footer li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-footer ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin: 0;
-    justify-content: space-between;
-}
-
-div {
-    display: inline-block;
     flex-wrap: wrap;
-    width: 49%;
-    height: 49%;
+    justify-content: space-around;
 }
 
-h2 {
+.bookslist h2 {
     text-align: center;
+    margin-bottom: 8%;
 }
 
-p {
-    margin-left: 3%;
+.bookslist {
+    margin-bottom: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: gold solid 1px;
+    padding-bottom: 3%;
+}
+
+.listfooter {
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+}
+
+.listfooter li {
+    display: inline-block;
+}
+
+.resume {
+    font-style: italic;
+}
+
+.author {
+    font-weight: bold;
+}
+
+.nbPages {
+    font-weight: lighter;
+    color: gray;
+}
+
+.bookslist a {
+    display: inline-block;
+    justify-content: space-around;
+}
+
+.bookslist div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.delete {
+    color: red;
+}
+
+.update {
+    color: blue;
+}
+
+.search {
+    margin-left: 5%;
+    margin-bottom: 10%;
 }
