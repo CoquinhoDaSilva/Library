@@ -1,0 +1,27 @@
+{% extends 'Front/Common/base.html.twig' %}
+
+{% block title %}
+    Les auteurs
+{% endblock %}
+
+{% block body %}
+
+    <h1>Les auteurs recherchés</h1>
+
+    <p class="searchvariable">Vous avez recherché les auteurs contenant le nom {{ search }}</p>
+
+    <section class="searchsection">
+        {% for author in authors %}
+            <div class="xLarge-8 searchdiv">
+                <a href="{{ path('author', {'id':author.id}) }}"><h2>{{ author.firstname }} {{ author.name }}</h2></a>
+                <p class="resume">{{ author.biography }}</p>
+                <p>{{ author.dateofbirth|date('m/d/Y') }}</p>
+            </div>
+        {% endfor %}
+    </section>
+
+    <div class="back"><a href="{{ path('authors') }}" class="xLarge-12">Revenir en arrière.</a></div>
+
+
+
+{% endblock %}

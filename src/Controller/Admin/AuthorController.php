@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 
 use App\Entity\Author;
@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 class AuthorController extends AbstractController {
 
     /**
-     * @Route("/authors", name="authors")
+     * @Route("/admin/authors", name="admin_authors")
      * @param AuthorRepository $bookrepository
      * @return \Symfony\Component\HttpFoundation\Response
      */
@@ -24,13 +24,13 @@ class AuthorController extends AbstractController {
 
         $authors = $bookrepository->findAll();
 
-        return $this->render('authors.html.twig', [
+        return $this->render('Admin/Authors/authors.html.twig', [
             'authors' => $authors
         ]);
     }
 
     /**
-     * @Route("/authors/show/{id}", name="author")
+     * @Route("/admin/authors/show/{id}", name="admin_author")
      * @param AuthorRepository $authorRepository
      * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
@@ -39,13 +39,13 @@ class AuthorController extends AbstractController {
 
         $author = $authorRepository->find($id);
 
-        return $this->render('author.html.twig', [
+        return $this->render('Admin/Authors/author.html.twig', [
             'author' => $author
         ]);
     }
 
     /**
-     * @Route("/authors/search", name="author_search")
+     * @Route("/admin/authors/search", name="admin_author_search")
      * @param AuthorRepository $authorRepository
      * @param Request $request
      * @return Response
@@ -55,14 +55,14 @@ class AuthorController extends AbstractController {
         $search = $request->query->get('search');
         $authors = $authorRepository->getByWordInName($search);
 
-        return $this->render('authorsearch.html.twig', [
+        return $this->render('Admin/Authors/authorsearch.html.twig', [
             'search'=>$search,
             'authors'=>$authors
         ]);
     }
 
     /**
-     * @Route("/authors/delete/{id}", name="authors_delete")
+     * @Route("/admin/authors/delete/{id}", name="admin_authors_delete")
      * @param AuthorRepository $authorRepository
      * @param EntityManagerInterface $entityManager
      * @param $id
@@ -75,11 +75,11 @@ class AuthorController extends AbstractController {
         $entityManager->remove($author);
         $entityManager->flush();
 
-        return $this->redirectToRoute('authors');
+        return $this->redirectToRoute('admin_authors');
     }
 
     /**
-     * @Route("/authors/insert", name="authors_insert")
+     * @Route("/admin/authors/insert", name="admin_authors_insert")
      * @param EntityManagerInterface $entityManager
      * @param Request $request
      * @return Response
@@ -105,7 +105,7 @@ class AuthorController extends AbstractController {
     }
 
     /**
-     * @Route("/authors/update/{id}", name="authors_update")
+     * @Route("/admin/authors/update/{id}", name="admin_authors_update")
      * @param AuthorRepository $authorRepository
      * @param EntityManagerInterface $entityManager
      * @param $id
@@ -120,7 +120,7 @@ class AuthorController extends AbstractController {
         $entityManager->persist($author);
         $entityManager->flush();
 
-        return $this->redirectToRoute('authors');
+        return $this->redirectToRoute('admin_authors');
 
 
     }

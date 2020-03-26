@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 
 use App\Entity\Book;
@@ -16,7 +16,7 @@ class BookController extends AbstractController
 {
 
     /**
-     * @Route("/books", name="books")
+     * @Route("/admin/books", name="admin_books")
      * @param BookRepository $bookRepository
      * @return Response
      */
@@ -25,14 +25,14 @@ class BookController extends AbstractController
 
         $books = $bookRepository->findAll();
 
-        return $this->render('books.html.twig', [
+        return $this->render('Admin/Books/books.html.twig', [
             'books' => $books
         ]);
     }
 
 
     /**
-     * @Route("/books/show/{id}", name="book")
+     * @Route("/admin/books/show/{id}", name="admin_book")
      * @param BookRepository $bookRepository
      * @param $id
      * @return Response
@@ -42,14 +42,14 @@ class BookController extends AbstractController
 
         $book = $bookRepository->find($id);
 
-        return $this->render('book.html.twig',
+        return $this->render('Admin/Books/book.html.twig',
             ['book' => $book
             ]);
 
     }
 
     /**
-     * @Route("/books/insert", name="book_insert")
+     * @Route("/admin/books/insert", name="admin_book_insert")
      * @param EntityManagerInterface $entityManager
      * @param Request $request
      * @return Response
@@ -77,7 +77,7 @@ class BookController extends AbstractController
 
 
     /**
-     * @Route("/books/delete/{id}", name="delete_book")
+     * @Route("/admin/books/delete/{id}", name="admin_delete_book")
      * @param BookRepository $bookRepository
      * @param EntityManagerInterface $entityManager
      * @param $id
@@ -90,11 +90,11 @@ class BookController extends AbstractController
         $entityManager->remove($book);
         $entityManager->flush();
 
-        return $this->redirectToRoute('books');
+        return $this->redirectToRoute('admin_books');
     }
 
     /**
-     * @Route("/books/update/{id}", name="update_book")
+     * @Route("/admin/books/update/{id}", name="admin_update_book")
      * @param BookRepository $bookRepository
      * @param EntityManagerInterface $entityManager
      * @param $id
@@ -110,13 +110,13 @@ class BookController extends AbstractController
         $entityManager->persist($book);
         $entityManager->flush();
 
-        return $this->redirectToRoute('books');
+        return $this->redirectToRoute('admin_books');
 
 
     }
 
     /**
-     * @Route("/books/search", name="search_book")
+     * @Route("/admin/books/search", name="admin_search_book")
      * @param BookRepository $bookRepository
      * @param Request $request
      */
@@ -126,7 +126,7 @@ class BookController extends AbstractController
 
         $books = $bookRepository->getByWordInResume($search);
 
-        return $this->render('search.html.twig', [
+        return $this->render('Admin/Books/search.html.twig', [
             'books'=> $books,
             'search'=> $search
         ]);

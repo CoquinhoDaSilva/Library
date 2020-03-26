@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Front;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -17,6 +17,6 @@ class HomeController extends AbstractController {
      */
     public function HomeController() {
 
-        return $this->render('home.html.twig');
+        return $this->render('Front/Home/home.html.twig');
     }
 }

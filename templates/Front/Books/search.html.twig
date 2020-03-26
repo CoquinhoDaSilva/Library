@@ -1,0 +1,28 @@
+{% extends 'Front/Common/base.html.twig' %}
+
+{% block title %}
+    Les livres
+{% endblock %}
+
+{% block body %}
+
+    <h1>Les livres recherchés</h1>
+
+    <p class="searchvariable">Vous avez recherché les livres contenant le(s) mot(s) {{ search }}</p>
+
+    <section class="searchsection">
+        {% for book in books %}
+            <div class="xLarge-8 searchdiv">
+                <a href="{{ path('book', {'id':book.id}) }}"><h2>{{ book.title }}</h2></a>
+                <p class="resume">{{ book.resume }}</p>
+                <p class="author">{{ book.author }}</p>
+                <p class="nbPages">Nombre de pages : {{ book.nbPages }}</p>
+            </div>
+        {% endfor %}
+    </section>
+
+    <div class="back"><a href="{{ path('books') }}" class="xLarge-12">Revenir en arrière.</a></div>
+
+
+
+{% endblock %}

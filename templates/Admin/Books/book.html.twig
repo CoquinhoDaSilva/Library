@@ -1,0 +1,22 @@
+{% extends 'Admin/Common/base.html.twig' %}
+
+{% block title %}
+    Le livre
+{% endblock %}
+
+{% block body %}
+
+<h1>Le livre</h1>
+
+    <section class="booksection">
+        <div class="bookdiv xLarge-8">
+            <h2>{{ book.title }}</h2>
+            <p class="resume">{{ book.resume }}</p>
+            <p class="author"> {{ book.author }}</p>
+            <p class="nbPages"> {{ book.nbPages }}</p>
+        </div>
+    </section>
+
+
+
+{% endblock %}

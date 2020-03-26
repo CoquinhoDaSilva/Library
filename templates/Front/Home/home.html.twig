@@ -1,0 +1,23 @@
+{% extends 'Front/Common/base.html.twig' %}
+
+{% block title %}
+    Accueil
+{% endblock %}
+
+{% block body %}
+
+    <main>
+        <h1>Accueil</h1>
+        <div class="home">
+            <div class="xLarge-5 homeauthors">
+                <div><a href="{{ path('authors') }}">Aller vers les auteurs</a></div>
+                <div><img class="imgresp imgauthors" src="https://www.actualitte.com/images/actualites/images/Auteurs/Victor%20Hugo%20-%20Citations.jpg"></div>
+            </div>
+            <div class="xLarge-5 homebooks">
+                <div><a href="{{ path('books') }}">Aller vers les livres</a></div>
+                <div><img class="imgresp imgbooks" src="https://www.erbree.fr/wp-content/uploads/2017/11/Bo%C3%AEte-%C3%A0-livre-Image-1024x514.png"></div>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

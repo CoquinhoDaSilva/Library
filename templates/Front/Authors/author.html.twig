@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'Front/Common/base.html.twig' %}
 
 {% block title %}
     L'auteur
@@ -12,7 +12,7 @@
         <div class="authordiv xLarge-8">
             <h2>{{ author.firstname}} {{ author.name }}</h2>
             <p class="resume">{{ author.biography }}</p>
-            <p class="author"> {{ author.dateofbirth|date('m/d/Y') }}</p>
+            <p class="author"> {{ author.dateofbirth|date('d/m/Y') }}</p>
         </div>
     </section>
 
