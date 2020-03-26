@@ -13,7 +13,7 @@
     <section class="searchsection">
         {% for author in authors %}
             <div class="xLarge-8 searchdiv">
-                <a href="{{ path('author', {'id':author.id}) }}"><h2>{{ author.firstname }}{{ author.name }}</h2></a>
+                <a href="{{ path('author', {'id':author.id}) }}"><h2>{{ author.firstname }} {{ author.name }}</h2></a>
                 <p class="resume">{{ author.biography }}</p>
                 <p>{{ author.dateofbirth|date('m/d/Y') }}</p>
             </div>

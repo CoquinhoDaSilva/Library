@@ -188,3 +188,32 @@ h1 {
 .authordiv {
     border-bottom: solid 1px gold;
 }
+
+.imgauthors,
+.imgbooks {
+    width: 50%;
+}
+
+.bookslist a {
+    display: inline-block;
+    justify-content: space-around;
+}
+
+.authorslist div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.home {
+    justify-content: center;
+    display: flex;
+    text-align: center;
+}
+
+.homeauthors a {
+    margin-bottom: 5%;
+}
+
+.homeauthors div {
+    display: inline-block;
+}

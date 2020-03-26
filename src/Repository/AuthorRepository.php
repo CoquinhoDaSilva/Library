@@ -63,4 +63,7 @@ class AuthorRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function remove(?Author $author)
+    {
+    }
 }
