@@ -27,14 +27,14 @@ class Book
     private $resume;
 
     /**
-     * @ORM\Column(type="string")
-     */
-    private $author;
-
-    /**
      * @ORM\Column(type="integer")
      */
     private $nbPages;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Author", inversedBy="books")
+     */
+    private $author;
 
     public function getId(): ?int
     {
@@ -72,22 +72,6 @@ class Book
     /**
      * @return mixed
      */
-    public function getAuthor()
-    {
-        return $this->author;
-    }
-
-    /**
-     * @param mixed $author
-     */
-    public function setAuthor( $author ): void
-    {
-        $this->author = $author;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getNbPages()
     {
         return $this->nbPages;
@@ -100,5 +84,22 @@ class Book
     {
         $this->nbPages = $nbPages;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * @param mixed $author
+     */
+    public function setAuthor($author): void
+    {
+        $this->author = $author;
+    }
+
 
 }

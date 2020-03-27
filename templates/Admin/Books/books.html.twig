@@ -1,10 +1,6 @@
 {% extends 'Admin/Common/base.html.twig' %}
 
-{% block title %}
-    Les livres
-{% endblock %}
-
-{% block body %}
+{% block content %}
 <main>
     <h1>Les livres</h1>
 
@@ -20,12 +16,10 @@
         {% for book in books %}
             <div class="bookslist xLarge-5">
                 <h2><a href="{{ path('admin_book', {'id':book.id}) }}">{{ book.title }}</a></h2>
-                <p class="resume">{{ book.resume }}</p>
-                <p class="author"> - {{ book.author }}</p>
-                <p class="nbPages">Nombre de pages : {{ book.nbPages }}</p>
+                <p class="author"> - {{ book.author.firstname }} {{ book.author.name }}</p>
                 <div>
-                    <a class="update" href="{{ path('admin_update_book', {'id':book.id})  }}">Modifier le livre</a>
-                    <a class="delete" href="{{ path('admin_delete_book', {'id':book.id})  }}">Supprimer le livre</a>
+                    <a class="update" href="{{ path('admin_update_book', {'id':book.id})  }}">Modifier</a>
+                    <a class="delete" href="{{ path('admin_delete_book', {'id':book.id})  }}">Supprimer</a>
                 </div>
             </div>
         {% endfor %}

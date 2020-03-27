@@ -21,7 +21,7 @@
             <div class="bookslist xLarge-5">
                 <h2><a href="{{ path('book', {'id':book.id}) }}">{{ book.title }}</a></h2>
                 <p class="resume">{{ book.resume }}</p>
-                <p class="author"> - {{ book.author }}</p>
+                <p class="author"> - {{ book.author.firstname }} {{ book.author.name }}</p>
                 <p class="nbPages">Nombre de pages : {{ book.nbPages }}</p>
             </div>
         {% endfor %}

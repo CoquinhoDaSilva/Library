@@ -1,10 +1,6 @@
 {% extends 'Admin/Common/base.html.twig' %}
 
-{% block title %}
-    Les livres
-{% endblock %}
-
-{% block body %}
+{% block content %}
 
     <h1>Les livres recherchés</h1>
 
@@ -15,7 +11,7 @@
         <div class="xLarge-8 searchdiv">
             <a href="{{ path('admin_book', {'id':book.id}) }}"><h2>{{ book.title }}</h2></a>
             <p class="resume">{{ book.resume }}</p>
-            <p class="author">{{ book.author }}</p>
+            <p class="author">{{ book.author.firstname }} {{ book.author.name }}</p>
             <p class="nbPages">Nombre de pages : {{ book.nbPages }}</p>
             <div>
                 <a class="update" href="{{ path('admin_update_book', {'id':book.id})  }}">Modifier le livre</a>

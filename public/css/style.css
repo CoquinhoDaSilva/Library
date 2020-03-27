@@ -217,3 +217,7 @@ h1 {
 .homeauthors div {
     display: inline-block;
 }
+
+.bluebackground {
+    background-color: #5eb5e0;
+}

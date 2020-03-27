@@ -15,7 +15,7 @@
             <div class="xLarge-8 searchdiv">
                 <a href="{{ path('book', {'id':book.id}) }}"><h2>{{ book.title }}</h2></a>
                 <p class="resume">{{ book.resume }}</p>
-                <p class="author">{{ book.author }}</p>
+                <p class="author">{{ book.author.firstname }} {{ book.author.name }}</p>
                 <p class="nbPages">Nombre de pages : {{ book.nbPages }}</p>
             </div>
         {% endfor %}

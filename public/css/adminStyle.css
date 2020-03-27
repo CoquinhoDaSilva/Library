@@ -1,0 +1,97 @@
+.body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: black;
+}
+
+.bluebackground {
+    background-color: #5eb5e0;
+    margin: 0;
+    padding: 3%;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.menu {
+    width: 13%;
+    height: 100vh;
+    background-color: #5eb5e0;
+    border-right: solid 1px black;
+}
+
+.dashboardcontent {
+    margin: 0;
+    padding-top: 10%;
+}
+
+.dashboardauthors,
+.dashboardbooks,
+.dashboardusers {
+    margin-left: 20%;
+}
+
+.divcontent {
+    width: 87%;
+    height: 100vh;
+}
+
+.displayflex {
+    display: flex;
+}
+
+.update {
+    color: darkblue;
+}
+
+.delete {
+    color: darkred;
+}
+
+.sectionbookslist {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sectionauthorslist {
+    display: flex;
+}
+
+.bookslist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bookslist a,
+.authorslist a {
+    text-decoration: none;
+}
+
+.dashboardstat {
+    display: flex;
+    border: 1px solid black;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+.homesection {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10%;
+}
+
+.dashboardvalue {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.dashboardstatrender {
+    text-align: center;
+}
+
+.dashboardhome {
+    margin-bottom: 30%;
+}

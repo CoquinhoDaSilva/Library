@@ -1,10 +1,6 @@
 {% extends 'Admin/Common/base.html.twig' %}
 
-{% block title %}
-    Les auteurs
-{% endblock %}
-
-{% block body %}
+{% block content %}
     <main>
         <h1>Les auteurs</h1>
 
@@ -20,8 +16,9 @@
             {% for author in authors %}
                 <div class="authorslist xLarge-5">
                     <h2><a href="{{ path('admin_author', {'id':author.id}) }}">{{ author.firstname }}  {{ author.name }}</a></h2>
-                    <p class="resume">{{ author.biography }}</p>
-                    <p> {{ author.dateofbirth|date("d/m/Y") }}</p>
+                    {% for book in author.books %}
+                        <p>{{ book.title }}</p>
+                    {% endfor %}
                     <div>
                         <a class="update" href="{{ path('admin_authors_update', {'id':author.id})  }}">Modifier l'auteur</a>
                         <a class="delete" href="{{ path('admin_authors_delete', {'id':author.id})  }}">Supprimer l'auteur</a>
@@ -30,6 +27,4 @@
             {% endfor %}
         </section>
     </main>
-
-
 {% endblock %}

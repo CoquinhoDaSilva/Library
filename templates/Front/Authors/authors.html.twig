@@ -22,6 +22,9 @@
                     <h2><a href="{{ path('author', {'id':author.id}) }}">{{ author.firstname }}  {{ author.name }}</a></h2>
                     <p class="resume">{{ author.biography }}</p>
                     <p> {{ author.dateofbirth|date("d/m/Y") }}</p>
+                    {% for book in author.books %}
+                    <p> {{ book.title }}</p>
+                    {% endfor %}
                 </div>
             {% endfor %}
         </section>
