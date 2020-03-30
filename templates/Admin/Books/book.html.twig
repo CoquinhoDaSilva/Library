@@ -8,7 +8,9 @@
         <div class="bookdiv xLarge-8">
             <h2>{{ book.title }}</h2>
             <p class="resume">{{ book.resume }}</p>
-            <p class="author"> {{ book.author.firstname }} {{ book.author.name }}</p>
+            {% if book.author %}
+                <p class="author"> {{ book.author.firstname }} {{ book.author.name }}</p>
+            {% endif %}
             <p class="nbPages"> {{ book.nbPages }}</p>
         </div>
     </section>

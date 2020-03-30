@@ -4,6 +4,8 @@ namespace App\Controller\Admin;
 
 
 use App\Entity\Author;
+use App\Form\AuthorType;
+use App\Form\BookType;
 use App\Repository\AuthorRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -86,41 +88,47 @@ class AuthorController extends AbstractController {
      */
     public function authorsInsert(EntityManagerInterface $entityManager, Request $request) {
 
-        $authors = new Author();
+        $author = new Author;
 
-        $firstname = $request->query->get('firstname');
-        $name = $request->query->get('name');
-        $dateofbirth = $request->query->get('dateofbirth');
-        $biography = $request->query->get('biography');
+        $formAuthor = $this->createForm(AuthorType::class, $author);
+        $formAuthor->handleRequest($request);
 
-        $authors->setFirstname($firstname);
-        $authors->setName($name);
-        $authors->setDateofbirth(new \DateTime($dateofbirth));
-        $authors->setBiography($biography);
+        if ($formAuthor->isSubmitted() && $formAuthor->isValid()) {
 
-        $entityManager->persist($authors);
-        $entityManager->flush();
+            $entityManager->persist($author);
+            $entityManager->flush();
+        }
 
-        return new Response('L\'auteur a été rajouté');
+        return $this->render('Admin/Authors/insert.html.twig', [
+            'formAuthor'=>$formAuthor->createView()
+        ]);
     }
+
 
     /**
      * @Route("/admin/authors/update/{id}", name="admin_authors_update")
+     * @param Request $request
      * @param AuthorRepository $authorRepository
      * @param EntityManagerInterface $entityManager
      * @param $id
      * @return RedirectResponse
      */
-    public function authorsUpdate(AuthorRepository $authorRepository, EntityManagerInterface $entityManager, $id) {
+    public function authorsUpdate(Request $request, AuthorRepository $authorRepository, EntityManagerInterface $entityManager, $id) {
 
         $author = $authorRepository->find($id);
 
-        $author->setName('Boloss');
+        $formAuthor = $this->createForm(AuthorType::class, $author);
+        $formAuthor->handleRequest($request);
 
-        $entityManager->persist($author);
-        $entityManager->flush();
+        if ($formAuthor->isSubmitted() && $formAuthor->isValid()) {
 
-        return $this->redirectToRoute('admin_authors');
+            $entityManager->persist($author);
+            $entityManager->flush();
+        }
+
+        return $this->render('Admin/Authors/update.html.twig', [
+            'formAuthor'=> $formAuthor->createView()
+        ]);
 
 
     }

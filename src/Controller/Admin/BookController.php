@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 
 
 use App\Entity\Book;
+use App\Form\BookType;
 use App\Repository\AuthorRepository;
 use App\Repository\BookRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -51,31 +52,27 @@ class BookController extends AbstractController
 
     /**
      * @Route("/admin/books/insert", name="admin_book_insert")
-     * @param EntityManagerInterface $entityManager
      * @param Request $request
-     * @param AuthorRepository $authorRepository
+     * @param EntityManagerInterface $entityManager
      * @return Response
      */
 
-    public function insertBook(EntityManagerInterface $entityManager, Request $request, AuthorRepository $authorRepository) {
+    public function insertBook(Request $request, EntityManagerInterface $entityManager) {
+        // Création d'un nouveau livre
+        $book = new Book;
+        //association du nouveau livre avec un formulaire créé dans BookType
+        $formBook = $this->createForm(BookType::class, $book);
+        //le handleRequest récupère les données POST et les donne au formulaire
+        $formBook->handleRequest(($request));
+        // Si formBook est submit ET valide alors on modifie la BDD et on confirme cette modification
+        if ($formBook->isSubmitted() && $formBook->isValid()) {
+            $entityManager->persist($book);
+            $entityManager->flush();
+        }
 
-        $book = new Book();
-
-        $title = $request->query->get('title');
-        $resume = $request->query->get('resume');
-        $nbPages = $request->query->get('nbPages');
-
-        $author = $authorRepository->find(1);
-
-        $book->setTitle($title);
-        $book->setAuthor($author);
-        $book->setResume($resume);
-        $book->setNbPages($nbPages);
-
-        $entityManager->persist($book);
-        $entityManager->flush();
-
-        return new Response('Livre enregistré');
+        return $this->render('Admin/Books/insert.html.twig',[
+            'formBook'=>$formBook->createView()
+        ]);
     }
 
 
@@ -104,16 +101,22 @@ class BookController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function updateBook(BookRepository $bookRepository, EntityManagerInterface $entityManager, $id) {
+    public function updateBook(Request $request, BookRepository $bookRepository, EntityManagerInterface $entityManager, $id) {
 
         $book = $bookRepository->find($id);
+        $formBook = $this->createForm(BookType::class, $book);
+        $formBook->handleRequest($request);
 
-        $book->setTitle('Nina est la meilleure');
+        if ($formBook->isSubmitted() && $formBook->isValid()) {
 
-        $entityManager->persist($book);
-        $entityManager->flush();
+            $entityManager->persist($book);
+            $entityManager->flush();
+        }
 
-        return $this->redirectToRoute('admin_books');
+
+        return $this->render('Admin/Books/update.html.twig', [
+            'formBook'=>$formBook->createView()
+        ]);
 
 
     }

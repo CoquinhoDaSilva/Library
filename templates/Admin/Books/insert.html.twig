@@ -1,0 +1,31 @@
+{% extends 'Admin/Common/base.html.twig' %}
+
+{% block content %}
+
+    <h2 class="alignCenter">Ajouter un livre : </h2>
+
+    <div class="inputFlex">
+        <div class="form">
+            {{ form_start(formBook) }}
+            {{ form_label(formBook.title) }}
+            <div class="inputTitle">
+                {{ form_widget(formBook.title, {'attr' : {'class' : 'form-control'}}) }}
+            </div>
+            {{ form_label(formBook.resume) }}
+            <div class="inputResume">
+                {{ form_widget(formBook.resume, {'attr' : {'class' : 'form-control'}}) }}
+            </div>
+            {{ form_label(formBook.nbPages) }}
+            <div class="inputNbPages">
+                {{ form_widget(formBook.nbPages, {'attr' : {'class' : 'form-control'}}) }}
+            </div>
+            {{ form_label(formBook.submit) }}
+            <div class="inputSubmit">
+                {{ form_widget(formBook.submit, {'attr' : {'class' : 'btn btn-primary'}}) }}
+            </div>
+            {{ form_end(formBook) }}
+        </div>
+    </div>
+
+
+{% endblock %}

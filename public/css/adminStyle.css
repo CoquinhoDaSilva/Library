@@ -5,6 +5,7 @@
 
 a {
     color: black;
+    text-decoration: none;
 }
 
 .bluebackground {
@@ -17,9 +18,9 @@ a {
 
 .menu {
     width: 13%;
-    height: 100vh;
     background-color: #5eb5e0;
     border-right: solid 1px black;
+    height: 100vh;
 }
 
 .dashboardcontent {
@@ -35,7 +36,6 @@ a {
 
 .divcontent {
     width: 87%;
-    height: 100vh;
 }
 
 .displayflex {
@@ -65,8 +65,8 @@ a {
     justify-content: space-between;
 }
 
-.bookslist a,
-.authorslist a {
+.bookslist h2 a,
+.authorslist h2 a {
     text-decoration: none;
 }
 
@@ -94,4 +94,25 @@ a {
 
 .dashboardhome {
     margin-bottom: 30%;
+}
+
+.form {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.inputFlex {
+    display: flex;
+    justify-content: center;
+}
+
+.align {
+    text-align: center;
+}
+
+a {
+    color: black;
+    text-decoration: none;
 }
