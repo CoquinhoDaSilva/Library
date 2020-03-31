@@ -68,6 +68,8 @@ class BookController extends AbstractController
         if ($formBook->isSubmitted() && $formBook->isValid()) {
             $entityManager->persist($book);
             $entityManager->flush();
+
+            $this->addFlash('success', 'Le livre a bien été ajouté !');
         }
 
         return $this->render('Admin/Books/insert.html.twig',[
@@ -90,6 +92,8 @@ class BookController extends AbstractController
         $entityManager->remove($book);
         $entityManager->flush();
 
+        $this->addFlash('success', 'Le livre a bien été supprimé !');
+
         return $this->redirectToRoute('admin_books');
     }
 
@@ -111,6 +115,8 @@ class BookController extends AbstractController
 
             $entityManager->persist($book);
             $entityManager->flush();
+
+            $this->addFlash('success', 'Le livre a bien été modifié !');
         }
 
 

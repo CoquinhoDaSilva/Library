@@ -77,6 +77,9 @@ class AuthorController extends AbstractController {
         $entityManager->remove($author);
         $entityManager->flush();
 
+        $this->addFlash('success', 'L\'auteur a bien été supprimé !');
+
+
         return $this->redirectToRoute('admin_authors');
     }
 
@@ -97,6 +100,9 @@ class AuthorController extends AbstractController {
 
             $entityManager->persist($author);
             $entityManager->flush();
+
+            $this->addFlash('success', 'L\'auteur a bien été ajouté !');
+
         }
 
         return $this->render('Admin/Authors/insert.html.twig', [
@@ -124,6 +130,9 @@ class AuthorController extends AbstractController {
 
             $entityManager->persist($author);
             $entityManager->flush();
+
+            $this->addFlash('success', 'L\'auteur a bien été modifié !');
+
         }
 
         return $this->render('Admin/Authors/update.html.twig', [

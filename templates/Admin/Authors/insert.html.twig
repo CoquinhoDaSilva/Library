@@ -11,18 +11,22 @@
             <div class="inputName">
                 {{ form_widget(formAuthor.name, {'attr' : {'class' : 'form-control'}}) }}
             </div>
+            {{ form_errors(formAuthor.name)}}
             {{ form_label(formAuthor.firstname) }}
             <div class="inputFirstName">
                 {{ form_widget(formAuthor.firstname, {'attr' : {'class' : 'form-control'}}) }}
             </div>
+            {{ form_errors(formAuthor.firstname)}}
             {{ form_label(formAuthor.dateofbirth) }}
             <div class="inputDateOfBirth">
                 {{ form_widget(formAuthor.dateofbirth, {'attr' : {'class' : 'form-control'}}) }}
             </div>
+            {{ form_errors(formAuthor.dateofbirth)}}
             {{ form_label(formAuthor.biography) }}
             <div class="inputBiography">
                 {{ form_widget(formAuthor.biography, {'attr' : {'class' : 'form-control'}}) }}
             </div>
+            {{ form_errors(formAuthor.biography)}}
             {{ form_label(formAuthor.submit) }}
             <div class="inputSubmit">
                 {{ form_widget(formAuthor.submit, {'attr' : {'class' : 'btn btn-primary'}}) }}

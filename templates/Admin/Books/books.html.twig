@@ -20,6 +20,7 @@
                     <p class="author"> - {{ book.author.firstname }} {{ book.author.name }}</p>
                 {% endif %}
                 <div>
+                    <a class="detail" href="{{ path('admin_book', {'id':book.id}) }}">Détails</a>
                     <a class="update" href="{{ path('admin_update_book', {'id':book.id})  }}">Modifier</a>
                     <a class="delete" href="{{ path('admin_delete_book', {'id':book.id})  }}">Supprimer</a>
                 </div>

@@ -5,6 +5,8 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AuthorRepository")
@@ -20,11 +22,13 @@ class Author
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\Length(max=50, maxMessage="Veuillez renseigner un nom de moins de 50 caractères.")
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\Length(max=50, maxMessage="Veuillez renseigner un prénom de moins de 50 caractères.")
      */
     private $firstname;
 
@@ -35,6 +39,7 @@ class Author
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min=50, minMessage="Veuillez renseigner un résumé de 50 caractères minimum.")
      */
     private $biography;
 

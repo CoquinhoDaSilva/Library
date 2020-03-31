@@ -11,7 +11,9 @@
     </head>
     <body class="body">
 
-    <h1 class="bluebackground">Menu Admin</h1>
+    <div class="bluebackground">
+        <h1>Menu Admin</h1>
+    </div>
 
     <main class="displayflex">
         <div class="menu">
@@ -40,6 +42,12 @@
         </div>
 
         <div class="divcontent">
+            <div class="addMessage">
+                {% for message in app.flashes('success') %}
+                    <div class="successMessage"> {{ message }}</div>
+                {% endfor %}
+            </div>
+
             {% block content %}
             {% endblock %}
 
