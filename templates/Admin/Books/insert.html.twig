@@ -32,6 +32,12 @@
             </div>
             {{ form_errors(formBook.author) }}
 
+            {{ form_label(formBook.picture) }}
+            <div class="inputPicture">
+                {{ form_widget(formBook.picture, {'attr' : {'class' : 'form-control'}}) }}
+            </div>
+            {{ form_errors(formBook.picture) }}
+
             {{ form_label(formBook.submit) }}
             <div class="inputSubmit">
                 {{ form_widget(formBook.submit, {'attr' : {'class' : 'btn btn-primary'}}) }}

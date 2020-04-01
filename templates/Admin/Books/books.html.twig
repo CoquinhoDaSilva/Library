@@ -14,6 +14,9 @@
 
     <section class="sectionbookslist xLarge-12">
         {% for book in books %}
+            {% if book.picture %}
+                <img src="{{ asset('uploads/pictures/' ~ book.picture) }}">
+            {% endif %}
             <div class="bookslist xLarge-5">
                 <h2><a href="{{ path('admin_book', {'id':book.id}) }}">{{ book.title }}</a></h2>
                 {% if book.author %}

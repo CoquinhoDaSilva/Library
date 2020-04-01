@@ -10,9 +10,11 @@ use App\Repository\AuthorRepository;
 use App\Repository\BookRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class BookController extends AbstractController
 {
@@ -54,10 +56,11 @@ class BookController extends AbstractController
      * @Route("/admin/books/insert", name="admin_book_insert")
      * @param Request $request
      * @param EntityManagerInterface $entityManager
+     * @param SluggerInterface $slugger
      * @return Response
      */
 
-    public function insertBook(Request $request, EntityManagerInterface $entityManager) {
+    public function insertBook(Request $request, EntityManagerInterface $entityManager, SluggerInterface $slugger) {
         // Création d'un nouveau livre
         $book = new Book;
         //association du nouveau livre avec un formulaire créé dans BookType
@@ -65,16 +68,41 @@ class BookController extends AbstractController
         //le handleRequest récupère les données POST et les donne au formulaire
         $formBook->handleRequest(($request));
         // Si formBook est submit ET valide alors on modifie la BDD et on confirme cette modification
+
         if ($formBook->isSubmitted() && $formBook->isValid()) {
+
+            $picture = $formBook->get('picture')->getData();
+
+            if ($picture) {
+                $originalFilename = pathinfo($picture->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$picture->guessExtension();
+
+                try {
+                    $picture->move(
+                        $this->getParameter('pictures_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+
+                }
+
+                $book->setPicture($newFilename);
+            }
+
             $entityManager->persist($book);
             $entityManager->flush();
 
             $this->addFlash('success', 'Le livre a bien été ajouté !');
+
+            return $this->redirect($this->generateUrl('admin_books'));
         }
 
         return $this->render('Admin/Books/insert.html.twig',[
             'formBook'=>$formBook->createView()
         ]);
+
+
     }
 
 

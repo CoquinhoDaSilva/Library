@@ -6,8 +6,7 @@ body {
 header {
     background-color: black;
     border-bottom: solid 3px gold;
-    position: fixed;
-    height: 15%;
+    height: 20%;
 }
 
 footer {
@@ -51,8 +50,8 @@ a:hover {
 
 h1 {
     text-align: center;
-    padding-top: 15%;
-    padding-bottom: 5%;
+    padding-top: 5%;
+    padding-bottom: 2%;
     margin: 0;
 }
 
@@ -220,4 +219,39 @@ h1 {
 
 .bluebackground {
     background-color: #5eb5e0;
+}
+
+.formLogin {
+    width: 30%;
+    margin-top: 5%;
+    border: solid 1px black;
+    padding: 1%;
+    margin-bottom: 5%;
+}
+
+.loginParent {
+    display: flex;
+    justify-content: center;
+}
+
+.loginLogo {
+    width: 40%;
+    margin-top: 5%;
+}
+
+.loginParentLogo {
+    display: flex;
+    justify-content: center;
+}
+
+.loginParentSubmit {
+    display: flex;
+    justify-content: center;
+}
+
+.loginPhrase {
+    font-size: 24px;
+    border-bottom: gold solid 2px;
+    margin-bottom: 5%;
+    padding-bottom: 7%;
 }
